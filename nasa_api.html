@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo de l'API de la NASA</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <article class="output">
+      <div class="img"></div>
+      <p class="copyright"></p>
+      <h1 class="title"></h1>
+
+      <p class="explanation"></p>
+    </article>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.js"
+      integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      $.ajax({
+        url: "https://api.nasa.gov/planetary/apod?api_key=mMhP8o9E8z4aLgJDCMdaayq7cQeDnXaRKe3zeXCz",
+        success: function (datas) {
+          document.querySelector(".img").innerHTML =
+            "<img src=" + datas.url + " alt=" + datas.title + ">";
+          document.querySelector(".copyright").innerHTML = datas.copyright;
+          document.querySelector(".title").innerHTML = datas.title;
+          document.querySelector(".explanation").innerHTML = datas.explanation;
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+body {
+    background-color: #1a1a1a;
+    color: #B5B5B5;
+}
+
+.output {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    text-align: center;
+}
